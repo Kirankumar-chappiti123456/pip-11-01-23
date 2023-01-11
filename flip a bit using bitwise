@@ -1,0 +1,25 @@
+#include <stdio.h>
+int flip(int a, int b)
+{
+    int c=0,k1,k2;
+    for(int i=0;i<32;i++)
+    {
+     k1=(a>>i)&1;
+     k2=(b>>i)&1;
+    if(k1!=k2)
+    {
+        c++;
+    }
+    }
+    printf("the reqiured bit to change the value a to b:%d",c);
+}
+int main()
+{
+    int a=10,b=20;
+    printf("enter the a value:");
+    scanf("%d",&a);
+    printf("enter the b value:");
+    scanf("%d",&b);
+    int (*fptr)(int ,int)=flip;
+    fptr(a,b);
+}
