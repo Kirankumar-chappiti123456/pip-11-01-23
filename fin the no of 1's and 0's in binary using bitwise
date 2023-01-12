@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define N sizeof(int)*8
+int fun(int num)
+{
+    int i=0,c=0,c1=0;
+    printf("enter the number:");
+    scanf("%d",&num);
+    for(i=0;i<N;i++)
+    {
+        if(num&1)
+            c++;
+
+        else
+        
+            c1++;
+            num=num>>1;
+    }
+    printf("no of one's:%d\n",c);
+    printf("no of zero's:%d",c1);
+}
+int main()
+{
+    int num;
+    int (*fptr)(int )=fun;
+    fptr(num);
+}
