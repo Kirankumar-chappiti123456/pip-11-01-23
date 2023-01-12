@@ -1,0 +1,13 @@
+#include<stdio.h>
+int endian(int i)
+{
+    
+    char *ptr=(char*)&i;
+    printf("it is little endian:%d",*ptr);
+}
+int main()
+{
+    int i=12345678;
+    int (*fptr)(int)=endian;
+    fptr(i);
+}
