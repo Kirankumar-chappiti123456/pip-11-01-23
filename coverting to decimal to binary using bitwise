@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include<string.h>
+int fun(int num)
+{
+    int index,c=0;
+    printf("enter the number:");
+    scanf("%d",&num);
+   int N =sizeof(int)*8;
+    int bin[N];
+    int n=sizeof(int )*8;
+    index=N-1;
+    while(index>=0)
+    {
+        bin[index]=num&1;
+        c++;
+        index--;
+        num=num>>1;
+    }
+    printf("decimal to binary convertion:");
+    for(int i=0;i<N;i++)
+    {
+        printf("%d ",bin[i]);
+    }
+    
+}
+int main()
+{
+    int num=5;
+    int (*fptr)(int)=fun;
+    fptr(num);
+    
+}
